@@ -28,6 +28,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+import ru.fiarr4ik.megaartifacts.inits.ItemInit;
 
 @Mod(MegaArtifacts.MODID)
 public class MegaArtifacts {
@@ -36,7 +37,7 @@ public class MegaArtifacts {
     public MegaArtifacts() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        //ModItems.register(modEventBus);
+        ItemInit.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
