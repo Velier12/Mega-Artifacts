@@ -29,6 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import ru.fiarr4ik.megaartifacts.inits.ItemInit;
+import ru.fiarr4ik.megaartifacts.utils.ModCreativeModeTabs;
 
 @Mod(MegaArtifacts.MODID)
 public class MegaArtifacts {
@@ -38,21 +39,8 @@ public class MegaArtifacts {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ItemInit.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::commonSetup);
     }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            //event.accept();
-        }
-    }
-
 }
